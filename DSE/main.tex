@@ -1,0 +1,74 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\title{DSE\_M2}
+\author{A}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{2017}
+\begin{align*}
+&1.\quad \text{設 } f(x) \text{ 是一定義在區間 } [0, k] \text{ 上的連續函數，其中 } k \text{ 是一正常數：}\\
+&(a)\quad \text{證明 } \int_{0}^{k} f(x)dx = \int_{0}^{k} f(k - x)dx \\
+&(b)\quad \text{證明 } \int_{0}^{1} \frac{\sin \pi x}{\sqrt{e} + e^x} dx = \frac{1}{\sqrt{e}} \int_{0}^{1} \frac{e^x \sin \pi x}{\sqrt{e} + e^x} dx \\
+&(c)\quad \text{利用 (b)，證明 } \int_{0}^{1} \frac{\sin \pi x}{\sqrt{e} + e^x} dx = \frac{1}{\pi \sqrt{e}} \\
+&(d)\quad \text{利用分部積分法，計算 } \int_{0}^{1} \ln(\sqrt{e} + e^x) \cos \pi x dx \\
+\end{align*}
+
+\newpage
+
+\section{2017*}
+(a)\quad
+\begin{align*}
+&\text{設 } u = k - x \text{，則 } du = -dx \text{ 。} \tag*{1M} \\
+&\text{當 } x = 0 \text{ 時，} u = k \text{；當 } x = k \text{ 時，} u = 0 \text{ 。} \\
+&\int_{0}^{k}f(x)dx = -\int_{k}^{0}f(k - u)du \notag \\
+&\qquad\qquad\quad= \int_{0}^{k}f(k - u)du \tag*{1M} \\
+&\qquad\qquad\quad= \int_{0}^{k}f(k - x)dx \tag*{1} \\
+&\tag{3}
+\end{align*}
+
+(b)\quad
+\begin{align*}
+\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx &= \int_{0}^{1}\frac{\sin(\pi - \pi x)}{\sqrt{e} + e^{1 - x}}dx \qquad\text{ （利用 (a)）} \tag*{1M} \\
+&=\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + \frac{e}{e^x}}dx \tag*{1M} \\
+&=\int_{0}^{1}\frac{e^x \sin \pi x}{e^x \sqrt{e} + e}dx \notag\\
+&=\int_{0}^{1}\frac{e^x \sin \pi x}{\sqrt{e}(e^x + \sqrt{e})}dx \notag \\
+&=\frac{1}{\sqrt{e}}\int_{0}^{1}\frac{e^x \sin \pi x}{\sqrt{e} + e^x}dx \tag*{1} \\
+&\tag{3}
+\end{align*}
+
+(c)\quad
+\begin{align*}
+\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx &= \frac{1}{\sqrt{e}}\int_{0}^{1}\frac{e^x \sin \pi x}{\sqrt{e} + e^x}dx \qquad\text{（利用 (b)）} \tag*{1M} \\
+\int_{0}^{1}\frac{\sqrt{e} \sin \pi x}{\sqrt{e} + e^x}dx &= \int_{0}^{1}\frac{e^x \sin \pi x}{\sqrt{e} + e^x}dx \notag \\
+2\int_{0}^{1}\frac{\sqrt{e} \sin \pi x}{\sqrt{e} + e^x}dx &=\int_{0}^{1}\frac{(\sqrt{e} + e^x)\sin \pi x}{\sqrt{e} + e^x}dx \notag \\
+2\sqrt{e}\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx &=\int_{0}^{1}\sin \pi xdx \tag*{1M} \\
+2\sqrt{e}\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx &=\left[ -\frac{\cos \pi x}{\pi} \right]_{0}^{1} \notag \\
+2\sqrt{e}\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx &=\frac{2}{\pi} \notag \\
+\therefore \int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx &=\frac{1}{\pi\sqrt{e}} \tag*{1} \\
+&\tag{3}
+\end{align*}
+
+(d)\quad
+\begin{align*}
+&\int_{0}^{1}\ln(\sqrt{e} + e^x)\cos \pi xdx \notag \\
+&=\int_{0}^{1}\ln(\sqrt{e} + e^x)d\left( \frac{\sin \pi x}{\pi} \right) \notag \\
+&=\left[ \frac{\ln(\sqrt{e} + e^x)\sin \pi x}{\pi} \right]_{0}^{1}-\int_{0}^{1}\frac{\sin \pi x}{\pi}d[\ln(\sqrt{e} + e^x)] \tag*{1M} \\
+&=-\frac{1}{\pi}\int_{0}^{1}\frac{e^x \sin \pi x}{\sqrt{e} + e^x}dx \notag \\
+&=-\frac{\sqrt{e}}{\pi}\int_{0}^{1}\frac{\sin \pi x}{\sqrt{e} + e^x}dx \qquad \text{（利用 (b)）} \tag*{1M} \\
+&=-\frac{\sqrt{e}}{\pi}\times \frac{1}{\pi\sqrt{e}} \qquad \text{（利用 (c)）} \notag \\
+&=-\frac{1}{\pi^2} \tag*{1A} \\
+&\tag{3}
+\end{align*}
+
+\section{0.1}
+\[
+1.\quad \text{計算 } \int_{-2}^{2} \left(x^{3} \cos {\frac{x}{2}} + \frac{1}{2}\right) \sqrt{4-x^2} dx
+\]
+
+\end{document}
